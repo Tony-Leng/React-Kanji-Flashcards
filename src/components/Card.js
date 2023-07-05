@@ -1,14 +1,14 @@
 import React from "react";
 
 const Card = (props) => {
-  const kanjiList = props.kanjiList;
-  const character = props.kanji;
+  const kanjiList = props.currentKanji;
 
   return (
     <div>
       {kanjiList.map((kanji) => (
-        <div>{ character }</div>
+        <div>{ kanji.character }</div>
       ))}
+      <button>Next Kanji</button>
     </div>
   )
 }
