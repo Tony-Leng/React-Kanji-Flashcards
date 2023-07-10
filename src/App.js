@@ -33,7 +33,7 @@ function App() {
     }
   ]
 
-  const [currentKanji, setCurrentKanji] = useState();
+  const [currentKanji, setCurrentKanji] = useState(kanji);
 
   useEffect(() => {
     const kanji = kanji[Math.floor(Math.random() * kanji.length)];
@@ -43,15 +43,10 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <Card kanjiList={kanjiList}/>
+      <Card currentKanji={currentKanji}/>
     </div>
   );
 }
 
 
 export default App;
-
-// randomKanji(currentKanji) {
-//   const kanji = currentKanji[Math.floor(Math.random() * currentKanji.length)];
-//   return(kanji);
-// };
