@@ -29,6 +29,21 @@ function App() {
       kunyomi: "kuni",
       meaning: "Country",
       jlpt: "N5",
+    },{
+      id: 4,
+      character: "人",
+      onyomi: "jin",
+      kunyomi: "hito",
+      meaning: "Person",
+      jlpt: "N5",
+    },
+    {
+      id: 5,
+      character: "年",
+      onyomi: "nen",
+      kunyomi: "toshi",
+      meaning: "Year, counter for years",
+      jlpt: "N5",
     }
   ]
 
