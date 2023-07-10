@@ -4,7 +4,6 @@ import NavBar from './components/NavBar';
 import Card from './components/Card';
 
 
-
 function App() {
   const kanjiList = [
     {
@@ -33,17 +32,23 @@ function App() {
     }
   ]
 
-  const [currentKanji, setCurrentKanji] = useState(kanji);
+  const [currentKanji, setCurrentKanji] = useState("日");
 
-  useEffect(() => {
-    const kanji = kanji[Math.floor(Math.random() * kanji.length)];
-    return kanji;
-  }, []); //dependency array
+  // useEffect(() => {
+  //   const randomKanji = kanjiList[Math.floor(Math.random() * kanjiList.length)];
+  //   const kanji = randomKanji.character;
+  // }, [currentKanji]); //dependency array
 
+  const randomKanji = () => {
+    const randomKanji = kanjiList[Math.floor(Math.random() * kanjiList.length)];
+    const kanji = randomKanji.character;
+    setCurrentKanji(kanji);
+  }
   return (
     <div className="App">
       <NavBar />
-      <Card currentKanji={currentKanji}/>
+      <Card chosenKanji={currentKanji}/>
+      <button onClick={ randomKanji }>Next Kanji</button>
     </div>
   );
 }
