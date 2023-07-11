@@ -1,7 +1,7 @@
 import React from "react";
 
-const Card = (props, {onClick}) => {
-  const kanji = props.character;
+const Card = (props, { onClick }) => {
+  const kanji = props.kanji;
   const onyomi = props.onyomi;
   const kunyomi = props.kunyomi;
   const meaning = props.meaning;
@@ -9,7 +9,7 @@ const Card = (props, {onClick}) => {
 
 
   return (
-    <div className="card-body" onClick={ onClick }>
+    <div className="card-body flip" onClick={ onClick }>
         <div className="card-front">{ kanji }</div>
         <div className="card-back">
           <h3>Onyomi: { onyomi }</h3>

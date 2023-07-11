@@ -14,7 +14,7 @@ body {
   height: 400px;
   width: 300px;
   border-radius: 8px;
-  border: #56A9E6;
+  border: #56A9E6 8px solid;
   display: grid;
   align-items: center;
   justify-content: center;
@@ -82,11 +82,15 @@ body {
 }
 
 button {
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
+  height: 50px;
+  width: 150px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
   color: #F9F9F9;
   background-color: #56A9E6;
+  cursor: pointer;
+  box-shadow: 16px black;
 }
 
 .App-logo {

@@ -67,7 +67,7 @@ function App() {
     setCurrentKunyomi(kunyomi);
     setCurrentMeaning(meaning);
     setCurrentJlpt(jlpt);
-  }, []);
+  }, [currentKanji, currentOnyomi, currentKunyomi, currentMeaning, currentJlpt]);
 
   const getKanji = () => {
     let randomKanji = kanjiList[Math.floor(Math.random() * kanjiList.length)].character;
@@ -87,7 +87,7 @@ function App() {
         <Card
           onClick={()=>{
             setShowFront((f) => !f);
-          }}s
+          }}
           kanji={currentKanji}
           onyomi={currentOnyomi}
           kunyomi={currentKunyomi}
