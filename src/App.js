@@ -50,21 +50,22 @@ function App() {
   const [currentKanji, setCurrentKanji] = useState(currentKanji);
 
   useEffect(() => {
-    const randomKanji = kanjiList[Math.floor(Math.random() * kanjiList.length)];
-    const kanji = randomKanji.character;
-    setCurrentKanji(kanji)
+    const randomKanji = kanjiList[Math.floor(Math.random() * kanjiList.length)].character;
+    setCurrentKanji(randomKanji)
   }, [currentKanji]); //dependency array
 
-  const randomKanji = () => {
-    const randomKanji = kanjiList[Math.floor(Math.random() * kanjiList.length)];
-    const kanji = randomKanji.character;
-    setCurrentKanji(kanji);
+  const getKanji = () => {
+    let randomKanji = kanjiList[Math.floor(Math.random() * kanjiList.length)].character;
+    do {
+      randomKanji = kanjiList[Math.floor(Math.random() * kanjiList.length)].character;
+    } while (randomKanji === currentKanji);
+    setCurrentKanji(randomKanji);
   }
   return (
     <div className="App">
       <NavBar />
       <Card chosenKanji={currentKanji}/>
-      <button onClick={ randomKanji }>Next Kanji</button>
+      <button onClick={ getKanji }>Next Kanji</button>
     </div>
   );
 }

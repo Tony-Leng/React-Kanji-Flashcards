@@ -4,7 +4,7 @@ const Card = (props) => {
   const displayKanji = props.chosenKanji;
 
   return (
-    <div>
+    <div className="card-body">
         <div>{ displayKanji }</div>
     </div>
   )

@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  justify-content: center;
 }
 
 body {
@@ -7,6 +8,20 @@ body {
   color:azure;
 }
 
+.card-body {
+  background-color: azure;
+  color: black;
+  font-size: 48;
+  height: 100px;
+  width: 100px;
+  border-radius: 8px;
+  border: blue 8px solid;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 24px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
