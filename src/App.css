@@ -11,9 +11,9 @@ body {
 .card-body {
   background-color: azure;
   color: black;
-  font-size: 48;
-  height: 100px;
-  width: 100px;
+  font-size: 48px;
+  height: 200px;
+  width: 200px;
   border-radius: 8px;
   border: blue 8px solid;
   display: grid;
