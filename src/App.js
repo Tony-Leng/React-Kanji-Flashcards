@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { CSSTransition } from "react-transition-group";
 import './App.css';
 import NavBar from './components/NavBar';
 import Card from './components/Card';
@@ -48,6 +49,7 @@ function App() {
   ]
 
   const [currentKanji, setCurrentKanji] = useState(currentKanji);
+  const [showFront, setShowFront] = useState(true);
 
   useEffect(() => {
     const randomKanji = kanjiList[Math.floor(Math.random() * kanjiList.length)].character;
@@ -64,7 +66,17 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <Card chosenKanji={currentKanji}/>
+      <CSSTransition>
+        <Card
+          onClick={()=>{
+            setShowFront((f) => !f);
+          }}
+          chosenKanji={currentKanji}
+          onyomi={currentKanji.onyomi}
+          kunyomi={currentKanji.onyomi}
+          meaning={currentKanji.meaning}
+          jlpt={currentKanji.jlpt}/>
+      </CSSTransition>
       <button onClick={ getKanji }>Next Kanji</button>
     </div>
   );

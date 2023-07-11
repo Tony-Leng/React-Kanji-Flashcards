@@ -11,7 +11,6 @@ body {
 .card-body {
   background-color: azure;
   color: black;
-  font-size: 48px;
   height: 200px;
   width: 200px;
   border-radius: 8px;
@@ -19,9 +18,74 @@ body {
   display: grid;
   align-items: center;
   justify-content: center;
+  box-shadow: 0px 0px 16px black;
   margin: 0 auto;
   margin-bottom: 24px;
+  position: relative;
+  user-select: none;
+  cursor: pointer;
+  transform-style: preserve-3d;
 }
+
+.card-front,
+.card-back {
+  backface-visibility: hidden;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-front{
+  font-size: 48px;
+}
+
+.card-back {
+  text-align: left;
+  padding-left: 24px;
+  transform: rotateY(180deg);
+}
+
+/* transitions */
+/* Exit transition
+- showFront = true -> onClick -> false
+- showFront = false -> onClick -> true
+
+Enter transition
+- showFront = false -> onClick -> true
+- back to front */
+
+/*Exit transition*/
+.flip-exit {
+  transform: rotateY(0deg);
+}
+
+/*active during transition, all the styles which card should animate to */
+.flip-exit-active {
+  transform: rotateY(180deg);
+  transition: transform 300ms;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.flip-exit-done {
+  transform: rotateY(180deg);
+}
+
+/* Enter transition */
+.flip-enter {
+  transform: rotateY(180deg);
+}
+
+.flip-enter-active {
+  transform: rotateY(0deg);
+  transition: transform 300ms;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.flip-enter-done {
+  transform: rotateY(0deg);
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
