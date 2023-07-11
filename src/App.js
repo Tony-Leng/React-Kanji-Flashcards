@@ -47,12 +47,13 @@ function App() {
     }
   ]
 
-  const [currentKanji, setCurrentKanji] = useState("日");
+  const [currentKanji, setCurrentKanji] = useState(currentKanji);
 
-  // useEffect(() => {
-  //   const randomKanji = kanjiList[Math.floor(Math.random() * kanjiList.length)];
-  //   const kanji = randomKanji.character;
-  // }, [currentKanji]); //dependency array
+  useEffect(() => {
+    const randomKanji = kanjiList[Math.floor(Math.random() * kanjiList.length)];
+    const kanji = randomKanji.character;
+    setCurrentKanji(kanji)
+  }, [currentKanji]); //dependency array
 
   const randomKanji = () => {
     const randomKanji = kanjiList[Math.floor(Math.random() * kanjiList.length)];
