@@ -54,7 +54,7 @@ function App() {
   useEffect(() => {
     const randomKanji = kanjiList[Math.floor(Math.random() * kanjiList.length)].character;
     setCurrentKanji(randomKanji)
-  }, [currentKanji]); //dependency array
+  }, [currentKanji]);
 
   const getKanji = () => {
     let randomKanji = kanjiList[Math.floor(Math.random() * kanjiList.length)].character;
@@ -66,7 +66,11 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <CSSTransition>
+      <CSSTransition
+        in={showFront}
+        timeout={300}
+        classNames={'flip'}
+      >
         <Card
           onClick={()=>{
             setShowFront((f) => !f);
