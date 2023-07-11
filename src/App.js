@@ -49,12 +49,25 @@ function App() {
   ]
 
   const [currentKanji, setCurrentKanji] = useState(currentKanji);
+  const [currentOnyomi, setCurrentOnyomi] = useState(currentOnyomi);
+  const [currentKunyomi, setCurrentKunyomi] = useState(currentKunyomi);
+  const [currentMeaning, setCurrentMeaning] = useState(currentMeaning);
+  const [currentJlpt, setCurrentJlpt] = useState(currentJlpt);
   const [showFront, setShowFront] = useState(true);
 
   useEffect(() => {
-    const randomKanji = kanjiList[Math.floor(Math.random() * kanjiList.length)].character;
-    setCurrentKanji(randomKanji)
-  }, [currentKanji]);
+    const randomKanji = kanjiList[Math.floor(Math.random() * kanjiList.length)];
+    const character = randomKanji.character;
+    const onyomi = randomKanji.onyomi;
+    const kunyomi = randomKanji.kunyomi;
+    const meaning = randomKanji.meaning;
+    const jlpt = randomKanji.jlpt;
+    setCurrentKanji(character);
+    setCurrentOnyomi(onyomi);
+    setCurrentKunyomi(kunyomi);
+    setCurrentMeaning(meaning);
+    setCurrentJlpt(jlpt);
+  }, []);
 
   const getKanji = () => {
     let randomKanji = kanjiList[Math.floor(Math.random() * kanjiList.length)].character;
@@ -74,12 +87,12 @@ function App() {
         <Card
           onClick={()=>{
             setShowFront((f) => !f);
-          }}
-          chosenKanji={currentKanji}
-          onyomi={currentKanji.onyomi}
-          kunyomi={currentKanji.onyomi}
-          meaning={currentKanji.meaning}
-          jlpt={currentKanji.jlpt}/>
+          }}s
+          kanji={currentKanji}
+          onyomi={currentOnyomi}
+          kunyomi={currentKunyomi}
+          meaning={currentMeaning}
+          jlpt={currentJlpt}/>
       </CSSTransition>
       <button onClick={ getKanji }>Next Kanji</button>
     </div>

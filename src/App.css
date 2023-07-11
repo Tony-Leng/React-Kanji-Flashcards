@@ -9,12 +9,12 @@ body {
 }
 
 .card-body {
-  background-color: azure;
+  background-color: #F9F9F9;
   color: black;
-  height: 200px;
-  width: 200px;
+  height: 400px;
+  width: 300px;
   border-radius: 8px;
-  border: blue 8px solid;
+  border: #56A9E6;
   display: grid;
   align-items: center;
   justify-content: center;
@@ -37,7 +37,11 @@ body {
 }
 
 .card-front{
-  font-size: 48px;
+  font-size: 64px;
+  margin: 0 auto;
+  display: contents;
+  justify-content: center;
+  font-weight: 600;
 }
 
 .card-back {
@@ -45,15 +49,6 @@ body {
   padding-left: 24px;
   transform: rotateY(180deg);
 }
-
-/* transitions */
-/* Exit transition
-- showFront = true -> onClick -> false
-- showFront = false -> onClick -> true
-
-Enter transition
-- showFront = false -> onClick -> true
-- back to front */
 
 /*Exit transition*/
 .flip-exit {
@@ -84,6 +79,14 @@ Enter transition
 
 .flip-enter-done {
   transform: rotateY(0deg);
+}
+
+button {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  color: #F9F9F9;
+  background-color: #56A9E6;
 }
 
 .App-logo {
