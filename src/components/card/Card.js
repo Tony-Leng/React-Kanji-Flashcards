@@ -1,5 +1,4 @@
 import React from "react";
-import Card from "./Card.css";
 
 const Card = (props, { onClick }) => {
   const kanji = props.kanji;
