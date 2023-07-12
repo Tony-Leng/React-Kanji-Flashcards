@@ -1,3 +1,4 @@
+import { useState } from "react";
 import React from "react";
 import ReactCardFlip from "react-card-flip";
 
@@ -8,12 +9,19 @@ export default function Card (props) {
   const meaning = props.meaning;
   const jlpt = props.jlpt;
 
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  function flipCard () {
+    setIsFlipped(!isFlipped)
+  }
 
   return (
     <div className="card-body">
-      <ReactCardFlip>
-        <div className="card-front">{ kanji }</div>
-        <div className="card-back">
+      <ReactCardFlip flipDirection="horizontal" isFlipped={isFlipped}>
+        <div className="card-front" onClick={flipCard}>
+          <h1>{ kanji }</h1>
+        </div>
+        <div className="card-back" onClick={flipCard}>
           <h3>Onyomi: { onyomi }</h3>
           <h3>Kunyomi: { kunyomi }</h3>
           <h3>Meaning: { meaning}</h3>

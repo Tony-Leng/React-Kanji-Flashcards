@@ -52,7 +52,6 @@ function App() {
   const [currentKunyomi, setCurrentKunyomi] = useState(currentKunyomi);
   const [currentMeaning, setCurrentMeaning] = useState(currentMeaning);
   const [currentJlpt, setCurrentJlpt] = useState(currentJlpt);
-  const [isFlipped, setIsFlipped] = useState(false);
 
   useEffect(() => {
     const randomKanji = kanjiList[Math.floor(Math.random() * kanjiList.length)];
@@ -68,7 +67,6 @@ function App() {
     setCurrentJlpt(jlpt);
   }, [currentKanji, currentOnyomi, currentKunyomi, currentMeaning, currentJlpt]);
 
-
   const getKanji = () => {
     let randomKanji = kanjiList[Math.floor(Math.random() * kanjiList.length)].character;
     do {
@@ -81,7 +79,6 @@ function App() {
     <div className="App">
       <NavBar />
       <Card
-        onClick={ isFlipped }
         kanji={currentKanji}
         onyomi={currentOnyomi}
         kunyomi={currentKunyomi}
