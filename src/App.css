@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  justify-content: center;
 }
 
 body {
@@ -34,12 +33,10 @@ body {
 }
 
 .card-back {
-  height: 100px;
   width: 100px;
-  background-color: #56A9E6;
-  color: black;
-  border: #F9F9F9 8px solid;
   text-align: left;
+  background-color: #56A9E6;
+  display: contents;
 }
 
 button {
