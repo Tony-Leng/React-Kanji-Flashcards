@@ -3,6 +3,7 @@ import { CSSTransition } from "react-transition-group";
 import './App.css';
 import NavBar from './components/NavBar';
 import Card from './components/Card';
+import FlippableCard from "./components/Flippable-Card";
 
 
 function App() {
@@ -84,6 +85,7 @@ function App() {
         timeout={300}
         classNames={'flip'}
       >
+      <FlippableCard />
         <Card
           onClick={()=>{
             setShowFront((f) => !f);
