@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { CSSTransition } from "react-transition-group";
 import './App.css';
 import NavBar from './components/NavBar';
 import Card from './components/Card';
@@ -53,7 +52,7 @@ function App() {
   const [currentKunyomi, setCurrentKunyomi] = useState(currentKunyomi);
   const [currentMeaning, setCurrentMeaning] = useState(currentMeaning);
   const [currentJlpt, setCurrentJlpt] = useState(currentJlpt);
-  const [showFront, setShowFront] = useState(true);
+  const [isFlipped, setIsFlipped] = useState(false);
 
   useEffect(() => {
     const randomKanji = kanjiList[Math.floor(Math.random() * kanjiList.length)];
@@ -69,6 +68,7 @@ function App() {
     setCurrentJlpt(jlpt);
   }, [currentKanji, currentOnyomi, currentKunyomi, currentMeaning, currentJlpt]);
 
+
   const getKanji = () => {
     let randomKanji = kanjiList[Math.floor(Math.random() * kanjiList.length)].character;
     do {
@@ -76,24 +76,17 @@ function App() {
     } while (randomKanji === currentKanji);
     setCurrentKanji(randomKanji);
   }
+
   return (
     <div className="App">
       <NavBar />
-      <CSSTransition
-        in={showFront}
-        timeout={300}
-        classNames={'flip'}
-      >
-        <Card
-          onClick={()=>{
-            setShowFront((f) => !f);
-          }}
-          kanji={currentKanji}
-          onyomi={currentOnyomi}
-          kunyomi={currentKunyomi}
-          meaning={currentMeaning}
-          jlpt={currentJlpt}/>
-      </CSSTransition>
+      <Card
+        onClick={ isFlipped }
+        kanji={currentKanji}
+        onyomi={currentOnyomi}
+        kunyomi={currentKunyomi}
+        meaning={currentMeaning}
+        jlpt={currentJlpt}/>
       <button onClick={ getKanji }>Next Kanji</button>
     </div>
   );

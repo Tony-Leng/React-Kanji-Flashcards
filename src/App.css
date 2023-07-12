@@ -50,49 +50,6 @@ body {
   transform: rotateY(180deg);
 }
 
-/*Exit transition*/
-.flip-exit {
-  transform: rotateY(0deg);
-}
-
-/*active during transition, all the styles which card should animate to */
-.flip-exit-active {
-  transform: rotateY(180deg);
-  transition: transform 300ms;
-  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.flip-exit-done {
-  transform: rotateY(180deg);
-}
-
-/* Enter transition */
-.flip-enter {
-  transform: rotateY(180deg);
-}
-
-.flip-enter-active {
-  transform: rotateY(0deg);
-  transition: transform 300ms;
-  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.flip-enter-done {
-  transform: rotateY(0deg);
-}
-
-button {
-  height: 50px;
-  width: 150px;
-  font-weight: 600;
-  border-radius: 8px;
-  border: none;
-  color: #F9F9F9;
-  background-color: #56A9E6;
-  cursor: pointer;
-  box-shadow: 16px black;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;

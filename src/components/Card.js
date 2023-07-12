@@ -1,6 +1,7 @@
 import React from "react";
+import ReactCardFlip from "react-card-flip";
 
-const Card = (props, { onClick }) => {
+export default function Card (props) {
   const kanji = props.kanji;
   const onyomi = props.onyomi;
   const kunyomi = props.kunyomi;
@@ -9,7 +10,8 @@ const Card = (props, { onClick }) => {
 
 
   return (
-    <div className="card-body flip" onClick={ onClick }>
+    <div className="card-body">
+      <ReactCardFlip>
         <div className="card-front">{ kanji }</div>
         <div className="card-back">
           <h3>Onyomi: { onyomi }</h3>
@@ -17,8 +19,7 @@ const Card = (props, { onClick }) => {
           <h3>Meaning: { meaning}</h3>
           <h3>JLPT: { jlpt }</h3>
         </div>
+      </ReactCardFlip>
     </div>
   )
 }
-
-export default Card;
