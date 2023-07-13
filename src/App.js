@@ -47,14 +47,17 @@ function App() {
     }
   ]
 
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [currentKanji, setCurrentKanji] = useState(currentKanji);
   const [currentOnyomi, setCurrentOnyomi] = useState(currentOnyomi);
   const [currentKunyomi, setCurrentKunyomi] = useState(currentKunyomi);
   const [currentMeaning, setCurrentMeaning] = useState(currentMeaning);
   const [currentJlpt, setCurrentJlpt] = useState(currentJlpt);
+  const [isFlipped, setIsFlipped] = useState(false);
 
   useEffect(() => {
-    const randomKanji = kanjiList[Math.floor(Math.random() * kanjiList.length)];
+    setCurrentIndex(Math.floor(Math.random() * kanjiList.length));
+    const randomKanji = kanjiList[currentIndex];
     const character = randomKanji.character;
     const onyomi = randomKanji.onyomi;
     const kunyomi = randomKanji.kunyomi;
@@ -65,14 +68,29 @@ function App() {
     setCurrentKunyomi(kunyomi);
     setCurrentMeaning(meaning);
     setCurrentJlpt(jlpt);
-  }, [currentKanji, currentOnyomi, currentKunyomi, currentMeaning, currentJlpt]);
+  }, []);
 
   const getKanji = () => {
-    let randomKanji = kanjiList[Math.floor(Math.random() * kanjiList.length)].character;
+    let newIndex;
     do {
-      randomKanji = kanjiList[Math.floor(Math.random() * kanjiList.length)].character;
-    } while (randomKanji === currentKanji);
-    setCurrentKanji(randomKanji);
+      newIndex = Math.floor(Math.random() * kanjiList.length);
+    } while (newIndex == currentIndex);
+    const randomKanji = kanjiList[newIndex];
+    const character = kanjiList[newIndex].character;
+    const onyomi = randomKanji.onyomi;
+    const kunyomi = randomKanji.kunyomi;
+    const meaning = randomKanji.meaning;
+    const jlpt = randomKanji.jlpt;
+    setCurrentIndex(newIndex);
+    setCurrentKanji(character);
+    setCurrentOnyomi(onyomi);
+    setCurrentKunyomi(kunyomi);
+    setCurrentMeaning(meaning);
+    setCurrentJlpt(jlpt);
+    setIsFlipped(false);
+  }
+  const flipCard = () => {
+    setIsFlipped(!isFlipped)
   }
 
   return (
@@ -83,6 +101,8 @@ function App() {
         onyomi={currentOnyomi}
         kunyomi={currentKunyomi}
         meaning={currentMeaning}
+        flipCard={flipCard}
+        isFlipped={isFlipped}
         jlpt={currentJlpt}/>
       <button onClick={ getKanji }>Next Kanji</button>
     </div>

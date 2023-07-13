@@ -8,12 +8,8 @@ export default function Card (props) {
   const kunyomi = props.kunyomi;
   const meaning = props.meaning;
   const jlpt = props.jlpt;
-
-  const [isFlipped, setIsFlipped] = useState(false);
-
-  function flipCard () {
-    setIsFlipped(!isFlipped)
-  }
+  const flipCard = props.flipCard;
+  const isFlipped = props.isFlipped;
 
   return (
     <div className="card-body">
