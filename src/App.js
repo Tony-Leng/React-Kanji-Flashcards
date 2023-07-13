@@ -4,7 +4,7 @@ import NavBar from './components/NavBar';
 import Card from './components/Card';
 
 
-function App() {
+export default function App(props) {
   const kanjiList = [
     {
       id: 1,
@@ -52,6 +52,11 @@ function App() {
   const [currentKunyomi, setCurrentKunyomi] = useState(currentKunyomi);
   const [currentMeaning, setCurrentMeaning] = useState(currentMeaning);
   const [currentJlpt, setCurrentJlpt] = useState(currentJlpt);
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  const flipCard = () => {
+    setIsFlipped(!isFlipped);
+  }
 
   useEffect(() => {
     const randomKanji = kanjiList[Math.floor(Math.random() * kanjiList.length)];
@@ -65,6 +70,7 @@ function App() {
     setCurrentKunyomi(kunyomi);
     setCurrentMeaning(meaning);
     setCurrentJlpt(jlpt);
+    setIsFlipped(false);
   }, [currentKanji, currentOnyomi, currentKunyomi, currentMeaning, currentJlpt]);
 
   const getKanji = () => {
@@ -83,11 +89,10 @@ function App() {
         onyomi={currentOnyomi}
         kunyomi={currentKunyomi}
         meaning={currentMeaning}
-        jlpt={currentJlpt}/>
+        jlpt={currentJlpt}
+        flipCard={flipCard}
+        isFlipped={isFlipped}/>
       <button onClick={ getKanji }>Next Kanji</button>
     </div>
   );
 }
-
-
-export default App;
