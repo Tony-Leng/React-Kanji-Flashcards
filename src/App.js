@@ -4,7 +4,7 @@ import NavBar from './components/NavBar';
 import Card from './components/Card';
 
 
-export default function App(props) {
+export default function App() {
   const kanjiList = [
     {
       id: 1,
@@ -29,7 +29,8 @@ export default function App(props) {
       kunyomi: "kuni",
       meaning: "Country",
       jlpt: "N5",
-    },{
+    },
+    {
       id: 4,
       character: "人",
       onyomi: "jin",
@@ -47,6 +48,7 @@ export default function App(props) {
     }
   ]
 
+  const [currentIndex, setCurrentIndex] = useState(currentIndex);
   const [currentKanji, setCurrentKanji] = useState(currentKanji);
   const [currentOnyomi, setCurrentOnyomi] = useState(currentOnyomi);
   const [currentKunyomi, setCurrentKunyomi] = useState(currentKunyomi);
@@ -59,26 +61,34 @@ export default function App(props) {
   }
 
   useEffect(() => {
-    const randomKanji = kanjiList[Math.floor(Math.random() * kanjiList.length)];
-    const character = randomKanji.character;
-    const onyomi = randomKanji.onyomi;
-    const kunyomi = randomKanji.kunyomi;
-    const meaning = randomKanji.meaning;
-    const jlpt = randomKanji.jlpt;
+    const kanji = kanjiList[Math.floor(Math.random() * kanjiList.length)];
+    const index = kanji.id;
+    const character = kanji.character;
+    const onyomi = kanji.onyomi;
+    const kunyomi = kanji.kunyomi;
+    const meaning = kanji.meaning;
+    const jlpt = kanji.jlpt;
+    setCurrentIndex(index);
     setCurrentKanji(character);
     setCurrentOnyomi(onyomi);
     setCurrentKunyomi(kunyomi);
     setCurrentMeaning(meaning);
     setCurrentJlpt(jlpt);
     setIsFlipped(false);
-  }, [currentKanji, currentOnyomi, currentKunyomi, currentMeaning, currentJlpt]);
+  }, []);
 
   const getKanji = () => {
-    let randomKanji = kanjiList[Math.floor(Math.random() * kanjiList.length)].character;
+    let randomKanji = {};
     do {
-      randomKanji = kanjiList[Math.floor(Math.random() * kanjiList.length)].character;
-    } while (randomKanji === currentKanji);
-    setCurrentKanji(randomKanji);
+      randomKanji = kanjiList[Math.floor(Math.random() * kanjiList.length)];
+    } while (randomKanji.character === currentKanji);
+    setCurrentIndex(randomKanji.id);
+    setCurrentKanji(randomKanji.character);
+    setCurrentOnyomi(randomKanji.onyomi);
+    setCurrentKunyomi(randomKanji.kunyomi);
+    setCurrentMeaning(randomKanji.meaning);
+    setCurrentJlpt(randomKanji.jlpt);
+    console.log(currentKanji);
   }
 
   return (
