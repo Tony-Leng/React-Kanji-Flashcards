@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import './App.css';
 import NavBar from './components/NavBar';
 import Card from './components/Card';
+import Button from './components/Button';
 
 
 export default function App() {
@@ -101,8 +102,11 @@ export default function App() {
         meaning={currentMeaning}
         jlpt={currentJlpt}
         flipCard={flipCard}
-        isFlipped={isFlipped}/>
-      <button onClick={ getKanji }>Next Kanji</button>
+        isFlipped={isFlipped}
+      />
+      <Button
+        getKanji={getKanji}
+      />
     </div>
   );
 }
