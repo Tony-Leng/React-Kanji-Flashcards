@@ -89,6 +89,7 @@ export default function App() {
     setCurrentKunyomi(randomKanji.kunyomi);
     setCurrentMeaning(randomKanji.meaning);
     setCurrentJlpt(randomKanji.jlpt);
+    setIsFlipped(false);
     console.log(currentKanji);
   }
 
