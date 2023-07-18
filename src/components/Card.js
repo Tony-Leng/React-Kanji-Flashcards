@@ -12,12 +12,14 @@ export default function Card (props) {
   const isFlipped = props.isFlipped;
 
   return (
-    <div className="card-body">
-      <ReactCardFlip flipDirection="horizontal" isFlipped={isFlipped}>
-        <div className="card-front" onClick={flipCard}>
+    <div>
+      <ReactCardFlip
+        flipDirection="horizontal"
+        isFlipped={isFlipped}>
+        <div className="card-body card-front" onClick={flipCard}>
           <h1>{ kanji }</h1>
         </div>
-        <div className="card-back" onClick={flipCard}>
+        <div className="card-body card-back" onClick={flipCard}>
           <h3>Onyomi: { onyomi }</h3>
           <h3>Kunyomi: { kunyomi }</h3>
           <h3>Meaning: { meaning}</h3>
