@@ -26,9 +26,6 @@ body {
 
 .card-front{
   font-size: 64px;
-  margin: 0 auto;
-  display: contents;
-  justify-content: center;
   font-weight: 600;
 }
 
