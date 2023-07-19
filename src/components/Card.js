@@ -22,14 +22,34 @@ export default function Card (props) {
           <h1>{ kanji }</h1>
         </div>
         <div className="card-body card-back" onClick={flipCard}>
-          <h3>Onyomi:</h3>
-          <h4>{ katakana }</h4>
-          <h4>{ onyomi }</h4>
-          <h3>Kunyomi:</h3>
-          <h4>{ hiragana }</h4>
-          <h4>{ kunyomi }</h4>
-          <h3>Meaning:</h3>
-          <h4>{ meaning }</h4>
+          <div className="card-back-container">
+            <div className="card-back-def">
+              <div className="card-back-title">
+                <h2>Onyomi:</h2>
+              </div>
+              <div className="card-back-def-width">
+                <h3>{ katakana }</h3>
+                <h3>{ onyomi }</h3>
+              </div>
+            </div>
+            <div className="card-back-def">
+              <div className="card-back-title">
+                <h2>Kunyomi:</h2>
+              </div>
+              <div className="card-back-def-width">
+                <h3>{ hiragana }</h3>
+                <h3>{ kunyomi }</h3>
+              </div>
+            </div>
+            <div className="card-back-def">
+              <div className="card-back-title">
+                <h2>Meaning:</h2>
+              </div>
+              <div className="card-back-def-width">
+                <h3>{ meaning }</h3>
+              </div>
+            </div>
+          </div>
           <div className="jlpt-badge">
             <h5 className="jlpt-title">JLPT</h5>
             <h1 className="jlpt-lvl">{ jlpt }</h1>

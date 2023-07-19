@@ -35,15 +35,30 @@ body {
   color: #F9F9F9;
   border: #F9F9F9 12px solid;
   border-radius: 8px;
-  display: grid;
-  align-items: center;
-  justify-content: center;
   box-shadow: 0px 0px 16px black;
-  margin: 0 auto;
   margin-bottom: 24px;
   user-select: none;
   cursor: pointer;
   position: relative;
+}
+
+.card-back-container{
+  height: 80%;
+}
+
+.card-back-def {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 8px;
+}
+
+.card-back-title {
+  text-align: left;
+}
+
+.card-back-def-width {
+  width: 50%;
+  text-align: right;
 }
 
 .jlpt-badge {
@@ -83,7 +98,7 @@ button {
   box-shadow: 16px black;
 }
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -116,4 +131,4 @@ button {
   to {
     transform: rotate(360deg);
   }
-}
+} */
