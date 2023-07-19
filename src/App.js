@@ -11,15 +11,19 @@ export default function App() {
       id: 1,
       character: "日",
       onyomi: "nichi, jitsu",
+      katakana: "ニチ, ジツ",
       kunyomi: "hi, -bi, -ka",
-      meaning: "Day, sun, Japan, counter for days",
+      hiragana: "ひ, -び, -か",
+      meaning: "day, sun, Japan, counter for days",
       jlpt: "N5",
     },
     {
       id: 2,
       character: "一",
       onyomi: "ichi",
+      katakana: "イチ",
       kunyomi: "hito(tsu)",
+      hiragana: "ひと(つ)",
       meaning: "One",
       jlpt: "N5",
     },
@@ -27,15 +31,19 @@ export default function App() {
       id: 3,
       character: "国",
       onyomi: "koku",
+      katakana: "コク",
       kunyomi: "kuni",
+      hiragana: "くに",
       meaning: "Country",
       jlpt: "N5",
     },
     {
       id: 4,
       character: "人",
-      onyomi: "jin",
+      onyomi: "jin, nin",
+      katakana: "ジン、 ニン",
       kunyomi: "hito",
+      hiragana: "ひと",
       meaning: "Person",
       jlpt: "N5",
     },
@@ -43,7 +51,9 @@ export default function App() {
       id: 5,
       character: "年",
       onyomi: "nen",
+      katakana: "ネン",
       kunyomi: "toshi",
+      hiragana: "とし",
       meaning: "Year, counter for years",
       jlpt: "N5",
     }
@@ -54,6 +64,8 @@ export default function App() {
   const [currentOnyomi, setCurrentOnyomi] = useState(currentOnyomi);
   const [currentKunyomi, setCurrentKunyomi] = useState(currentKunyomi);
   const [currentMeaning, setCurrentMeaning] = useState(currentMeaning);
+  const [currentHiragana, setCurrentHiragana] = useState(currentHiragana);
+  const [currentKatakana, setCurrentKatakana] = useState(currentKatakana);
   const [currentJlpt, setCurrentJlpt] = useState(currentJlpt);
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -69,12 +81,16 @@ export default function App() {
     const kunyomi = kanji.kunyomi;
     const meaning = kanji.meaning;
     const jlpt = kanji.jlpt;
+    const hiragana = kanji.hiragana;
+    const katakana = kanji.katakana;
     setCurrentIndex(index);
     setCurrentKanji(character);
     setCurrentOnyomi(onyomi);
     setCurrentKunyomi(kunyomi);
     setCurrentMeaning(meaning);
     setCurrentJlpt(jlpt);
+    setCurrentHiragana(hiragana);
+    setCurrentKatakana(katakana);
     setIsFlipped(false);
   }, []);
 
@@ -89,6 +105,8 @@ export default function App() {
     setCurrentKunyomi(randomKanji.kunyomi);
     setCurrentMeaning(randomKanji.meaning);
     setCurrentJlpt(randomKanji.jlpt);
+    setCurrentHiragana(randomKanji.hiragana);
+    setCurrentKatakana(randomKanji.katakana);
     setIsFlipped(false);
     console.log(currentKanji);
   }
@@ -102,6 +120,8 @@ export default function App() {
         kunyomi={currentKunyomi}
         meaning={currentMeaning}
         jlpt={currentJlpt}
+        hiragana={currentHiragana}
+        katakana={currentKatakana}
         flipCard={flipCard}
         isFlipped={isFlipped}
       />
