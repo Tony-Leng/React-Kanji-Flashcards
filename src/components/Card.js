@@ -22,8 +22,11 @@ export default function Card (props) {
         <div className="card-body card-back" onClick={flipCard}>
           <h3>Onyomi: { onyomi }</h3>
           <h3>Kunyomi: { kunyomi }</h3>
-          <h3>Meaning: { meaning}</h3>
-          <h3>JLPT: { jlpt }</h3>
+          <h3>Meaning: { meaning }</h3>
+          <div className="jlpt-badge">
+            <h5 className="jlpt-title">JLPT</h5>
+            <h1 className="jlpt-lvl">{ jlpt }</h1>
+          </div>
         </div>
       </ReactCardFlip>
     </div>

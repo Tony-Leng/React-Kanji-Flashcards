@@ -10,7 +10,7 @@ body {
 .card-body {
   background: #F9F9F9;
   color: black;
-  border: #56A9E6 8px solid;
+  border: #56A9E6 12px solid;
   height: 400px;
   width: 300px;
   border-radius: 8px;
@@ -33,7 +33,7 @@ body {
   width: 300px;
   background: #56A9E6;
   color: #F9F9F9;
-  border: #F9F9F9 8px solid;
+  border: #F9F9F9 12px solid;
   border-radius: 8px;
   display: grid;
   align-items: center;
@@ -43,6 +43,32 @@ body {
   margin-bottom: 24px;
   user-select: none;
   cursor: pointer;
+  position: relative;
+}
+
+.jlpt-badge {
+  position: absolute;
+  right: -9px;
+  bottom: -9px;
+  background: #F9F9F9;
+  color: #56A9E6;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.jlpt-title {
+  margin-top: 4px;
+  margin-bottom: -1px;
+  font-weight: 400;
+}
+
+.jlpt-lvl {
+  margin-top: -12px;
+  font-weight: 700;
 }
 
 button {
