@@ -70,9 +70,6 @@ body {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  display: grid;
-  justify-content: center;
-  align-items: center;
 }
 
 .jlpt-title {
@@ -82,7 +79,7 @@ body {
 }
 
 .jlpt-lvl {
-  margin-top: -12px;
+  margin-top: 4px;
   font-weight: 700;
 }
 

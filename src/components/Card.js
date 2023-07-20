@@ -51,7 +51,7 @@ export default function Card (props) {
             </div>
           </div>
           <div className="jlpt-badge">
-            <h5 className="jlpt-title">JLPT</h5>
+            {/* <h5 className="jlpt-title">JLPT</h5> */}
             <h1 className="jlpt-lvl">{ jlpt }</h1>
           </div>
         </div>
