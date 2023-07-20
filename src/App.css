@@ -74,17 +74,17 @@ body {
 
 .card-back-hiragana {
   position: absolute;
-  top: 128px;
+  top: 120px;
 }
 
 .card-back-kunyomi {
   position: absolute;
-  top: 152px;
+  top: 144px;
 }
 
 .card-back-meaning {
   position: absolute;
-  top: 232px;
+  top: 216px;
 }
 
 .card-back-def {

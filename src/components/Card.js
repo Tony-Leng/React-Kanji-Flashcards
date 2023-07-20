@@ -29,11 +29,11 @@ export default function Card (props) {
               <h2>Meaning:</h2>
             </div>
             <div className="card-back-right">
-              <h4 className="card-back-def card-back-katakana">{ katakana }</h4>
-              <h4 className="card-back-def card-back-onyomi">{ onyomi }</h4>
-              <h4 className="card-back-def card-back-hiragana">{ hiragana }</h4>
-              <h4 className="card-back-def card-back-kunyomi">{ kunyomi }</h4>
-              <h4 className="card-back-def card-back-meaning">{ meaning }</h4>
+              <h3 className="card-back-def card-back-katakana">{ katakana }</h3>
+              <h3 className="card-back-def card-back-onyomi">{ onyomi }</h3>
+              <h3 className="card-back-def card-back-hiragana">{ hiragana }</h3>
+              <h3 className="card-back-def card-back-kunyomi">{ kunyomi }</h3>
+              <h3 className="card-back-def card-back-meaning">{ meaning }</h3>
             </div>
           </div>
           <div className="jlpt-badge">
