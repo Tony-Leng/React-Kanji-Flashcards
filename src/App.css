@@ -145,7 +145,7 @@ button {
 
   .card-back-katakana {
     position: absolute;
-    top: opx;
+    top: 0px;
   }
 
   .card-back-onyomi {
@@ -155,16 +155,16 @@ button {
 
   .card-back-hiragana {
     position: absolute;
-    top: 96px;
+    top: 92px;
   }
 
   .card-back-kunyomi {
     position: absolute;
-    top: 120px;
+    top: 116px;
   }
 
   .card-back-meaning {
     position: absolute;
-    top: 192px;
+    top: 188px;
   }
 }
