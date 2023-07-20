@@ -155,16 +155,16 @@ button {
 
   .card-back-hiragana {
     position: absolute;
-    top: 92px;
+    top: 88px;
   }
 
   .card-back-kunyomi {
     position: absolute;
-    top: 116px;
+    top: 112px;
   }
 
   .card-back-meaning {
     position: absolute;
-    top: 188px;
+    top: 184px;
   }
 }
