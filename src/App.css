@@ -64,27 +64,27 @@ body {
 
 .card-back-katakana {
   position: absolute;
-  top: 24px;
+  top: 4px;
 }
 
 .card-back-onyomi {
   position: absolute;
-  top: 48px;
+  top: 28px;
 }
 
 .card-back-hiragana {
   position: absolute;
-  top: 120px;
+  top: 100px;
 }
 
 .card-back-kunyomi {
   position: absolute;
-  top: 144px;
+  top: 124px;
 }
 
 .card-back-meaning {
   position: absolute;
-  top: 216px;
+  top: 196px;
 }
 
 .card-back-def {
@@ -132,37 +132,10 @@ button {
   box-shadow: 16px black;
 }
 
-/* .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media screen and (max-width: 475px) {
+  .jlpt-lvl {
+    display:grid;
+    align-items: center;
+    justify-content: center;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
