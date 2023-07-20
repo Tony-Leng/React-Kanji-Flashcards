@@ -4,7 +4,10 @@
 
 body {
   background-color: #282c34;
-  color:azure;
+}
+
+.navbar {
+ color: #F9F9F9;
 }
 
 .card-body {
@@ -137,5 +140,31 @@ button {
     display:grid;
     align-items: center;
     justify-content: center;
+    margin-top: 8px;
+  }
+
+  .card-back-katakana {
+    position: absolute;
+    top: opx;
+  }
+
+  .card-back-onyomi {
+    position: absolute;
+    top: 24px;
+  }
+
+  .card-back-hiragana {
+    position: absolute;
+    top: 96px;
+  }
+
+  .card-back-kunyomi {
+    position: absolute;
+    top: 120px;
+  }
+
+  .card-back-meaning {
+    position: absolute;
+    top: 192px;
   }
 }
