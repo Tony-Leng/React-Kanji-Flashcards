@@ -43,22 +43,59 @@ body {
 }
 
 .card-back-container{
-  height: 80%;
-}
-
-.card-back-def {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 8px;
+  position: absolute;
+  top: 24px;
+  left: 16px;
 }
 
 .card-back-title {
+  position: absolute;
   text-align: left;
+  left:24px;
 }
 
-.card-back-def-width {
-  width: 50%;
-  text-align: right;
+.card-back-title-text {
+  margin-bottom: 64px;
+}
+
+.card-back-right {
+  position: relative;
+}
+
+.card-back-katakana {
+  position: absolute;
+  top: 24px;
+}
+
+.card-back-onyomi {
+  position: absolute;
+  top: 48px;
+}
+
+.card-back-hiragana {
+  position: absolute;
+  top: 128px;
+}
+
+.card-back-kunyomi {
+  position: absolute;
+  top: 152px;
+}
+
+.card-back-meaning {
+  position: absolute;
+  top: 232px;
+}
+
+.card-back-def {
+  position: absolute;
+  text-align: left;
+  left: 160px;
+  width: 100px;
+}
+
+h4 {
+  margin: 0px;
 }
 
 .jlpt-badge {
