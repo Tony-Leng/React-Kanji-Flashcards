@@ -96,19 +96,22 @@ export default function App() {
 
   const getKanji = () => {
     let randomKanji = {};
-    do {
-      randomKanji = kanjiList[Math.floor(Math.random() * kanjiList.length)];
-    } while (randomKanji.character === currentKanji);
-    setCurrentIndex(randomKanji.id);
-    setCurrentKanji(randomKanji.character);
-    setCurrentOnyomi(randomKanji.onyomi);
-    setCurrentKunyomi(randomKanji.kunyomi);
-    setCurrentMeaning(randomKanji.meaning);
-    setCurrentJlpt(randomKanji.jlpt);
-    setCurrentHiragana(randomKanji.hiragana);
-    setCurrentKatakana(randomKanji.katakana);
+
+    setTimeout(() => {
+      do {
+        randomKanji = kanjiList[Math.floor(Math.random() * kanjiList.length)];
+      } while (randomKanji.character === currentKanji);
+      setCurrentIndex(randomKanji.id);
+      setCurrentKanji(randomKanji.character);
+      setCurrentOnyomi(randomKanji.onyomi);
+      setCurrentKunyomi(randomKanji.kunyomi);
+      setCurrentMeaning(randomKanji.meaning);
+      setCurrentJlpt(randomKanji.jlpt);
+      setCurrentHiragana(randomKanji.hiragana);
+      setCurrentKatakana(randomKanji.katakana);
+      console.log(currentKanji);
+    }, 150)
     setIsFlipped(false);
-    console.log(currentKanji);
   }
 
   return (
