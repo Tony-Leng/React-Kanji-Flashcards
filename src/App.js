@@ -3,63 +3,68 @@ import './App.css';
 import NavBar from './components/NavBar';
 import Card from './components/Card';
 import Button from './components/Button';
+import { db } from './config/firebase';
+import { getDocs, collection } from 'firebase/firestore'
 
 
 export default function App() {
-  const kanjiList = [
-    {
-      id: 1,
-      character: "日",
-      onyomi: "nichi, jitsu",
-      katakana: "ニチ, ジツ",
-      kunyomi: "hi, -bi, -ka",
-      hiragana: "ひ, -び, -か",
-      meaning: "day, sun, Japan, counter for days",
-      jlpt: "N5",
-    },
-    {
-      id: 2,
-      character: "一",
-      onyomi: "ichi",
-      katakana: "イチ",
-      kunyomi: "hito(tsu)",
-      hiragana: "ひと(つ)",
-      meaning: "One",
-      jlpt: "N5",
-    },
-    {
-      id: 3,
-      character: "国",
-      onyomi: "koku",
-      katakana: "コク",
-      kunyomi: "kuni",
-      hiragana: "くに",
-      meaning: "Country",
-      jlpt: "N5",
-    },
-    {
-      id: 4,
-      character: "人",
-      onyomi: "jin, nin",
-      katakana: "ジン、 ニン",
-      kunyomi: "hito",
-      hiragana: "ひと",
-      meaning: "Person",
-      jlpt: "N5",
-    },
-    {
-      id: 5,
-      character: "年",
-      onyomi: "nen",
-      katakana: "ネン",
-      kunyomi: "toshi",
-      hiragana: "とし",
-      meaning: "Year, counter for years",
-      jlpt: "N5",
-    }
-  ]
+  // const kanjiList = [
+  //   {
+  //     id: 1,
+  //     character: "日",
+  //     onyomi: "nichi, jitsu",
+  //     katakana: "ニチ, ジツ",
+  //     kunyomi: "hi, -bi, -ka",
+  //     hiragana: "ひ, -び, -か",
+  //     meaning: "day, sun, Japan, counter for days",
+  //     jlpt: "N5",
+  //   },
+  //   {
+  //     id: 2,
+  //     character: "一",
+  //     onyomi: "ichi",
+  //     katakana: "イチ",
+  //     kunyomi: "hito(tsu)",
+  //     hiragana: "ひと(つ)",
+  //     meaning: "One",
+  //     jlpt: "N5",
+  //   },
+  //   {
+  //     id: 3,
+  //     character: "国",
+  //     onyomi: "koku",
+  //     katakana: "コク",
+  //     kunyomi: "kuni",
+  //     hiragana: "くに",
+  //     meaning: "Country",
+  //     jlpt: "N5",
+  //   },
+  //   {
+  //     id: 4,
+  //     character: "人",
+  //     onyomi: "jin, nin",
+  //     katakana: "ジン、 ニン",
+  //     kunyomi: "hito",
+  //     hiragana: "ひと",
+  //     meaning: "Person",
+  //     jlpt: "N5",
+  //   },
+  //   {
+  //     id: 5,
+  //     character: "年",
+  //     onyomi: "nen",
+  //     katakana: "ネン",
+  //     kunyomi: "toshi",
+  //     hiragana: "とし",
+  //     meaning: "Year, counter for years",
+  //     jlpt: "N5",
+  //   }
+  // ]
 
-  const [currentIndex, setCurrentIndex] = useState(currentIndex);
+  const [kanjiList, setKanjiList] = useState([]);
+  const kanjiCollectionRef = collection(db, "kanjiList");
+
+  // const [currentIndex, setCurrentIndex] = useState(currentIndex);
   const [currentKanji, setCurrentKanji] = useState(currentKanji);
   const [currentOnyomi, setCurrentOnyomi] = useState(currentOnyomi);
   const [currentKunyomi, setCurrentKunyomi] = useState(currentKunyomi);
@@ -74,24 +79,42 @@ export default function App() {
   }
 
   useEffect(() => {
-    const kanji = kanjiList[Math.floor(Math.random() * kanjiList.length)];
-    const index = kanji.id;
-    const character = kanji.character;
-    const onyomi = kanji.onyomi;
-    const kunyomi = kanji.kunyomi;
-    const meaning = kanji.meaning;
-    const jlpt = kanji.jlpt;
-    const hiragana = kanji.hiragana;
-    const katakana = kanji.katakana;
-    setCurrentIndex(index);
-    setCurrentKanji(character);
-    setCurrentOnyomi(onyomi);
-    setCurrentKunyomi(kunyomi);
-    setCurrentMeaning(meaning);
-    setCurrentJlpt(jlpt);
-    setCurrentHiragana(hiragana);
-    setCurrentKatakana(katakana);
-    setIsFlipped(false);
+        const data = getDocs(kanjiCollectionRef);
+        const kanjiData = data[Math.floor(Math.random() * data.length)];
+        const character = kanjiData.character;
+        const onyomi = kanjiData.onyomi;
+        const kunyomi = kanjiData.kunyomi;
+        const meaning = kanjiData.meaning;
+        const jlpt = kanjiData.jlpt;
+        const hiragana = kanjiData.hiragana;
+        const katakana = kanjiData.katakana;
+        setKanjiList(kanjiData);
+        setCurrentKanji(character);
+        setCurrentOnyomi(onyomi);
+        setCurrentKunyomi(kunyomi);
+        setCurrentMeaning(meaning);
+        setCurrentJlpt(jlpt);
+        setCurrentHiragana(hiragana);
+        setCurrentKatakana(katakana);
+        setIsFlipped(false);
+    // const kanji = kanjiList[Math.floor(Math.random() * kanjiList.length)];
+    // const index = kanji.id;
+    // const character = kanji.character;
+    // const onyomi = kanji.onyomi;
+    // const kunyomi = kanji.kunyomi;
+    // const meaning = kanji.meaning;
+    // const jlpt = kanji.jlpt;
+    // const hiragana = kanji.hiragana;
+    // const katakana = kanji.katakana;
+    // setCurrentIndex(index);
+    // setCurrentKanji(character);
+    // setCurrentOnyomi(onyomi);
+    // setCurrentKunyomi(kunyomi);
+    // setCurrentMeaning(meaning);
+    // setCurrentJlpt(jlpt);
+    // setCurrentHiragana(hiragana);
+    // setCurrentKatakana(katakana);
+    // setIsFlipped(false);
   }, []);
 
   const getKanji = () => {
@@ -99,9 +122,9 @@ export default function App() {
 
     setTimeout(() => {
       do {
-        randomKanji = kanjiList[Math.floor(Math.random() * kanjiList.length)];
+        randomKanji = kanjiCollectionRef[Math.floor(Math.random() * kanjiCollectionRef.length)];
       } while (randomKanji.character === currentKanji);
-      setCurrentIndex(randomKanji.id);
+      // setCurrentIndex(randomKanji.id);
       setCurrentKanji(randomKanji.character);
       setCurrentOnyomi(randomKanji.onyomi);
       setCurrentKunyomi(randomKanji.kunyomi);
