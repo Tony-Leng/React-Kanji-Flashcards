@@ -123,6 +123,9 @@ h4 {
   font-weight: 700;
 }
 
+.buttons {
+  justify-content: space-between;
+}
 button {
   height: 50px;
   width: 150px;
