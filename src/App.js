@@ -56,17 +56,67 @@ export default function App() {
       hiragana: "とし",
       meaning: "Year, counter for years",
       jlpt: "N5",
+    },
+    {
+      id: 6,
+      character: "会",
+      onyomi: "kai",
+      katakana: "カイ",
+      kunyomi: "a(u)",
+      hiragana: "あ(う)",
+      meaning: "meeting; meet",
+      jlpt: "N4",
+    },
+    {
+      id: 7,
+      character: "同",
+      onyomi: "dou",
+      katakana: "ドウ",
+      kunyomi: "onaji",
+      hiragana: "おな(じ)",
+      meaning: "same, agree, equal",
+      jlpt: "N4",
+    },
+    {
+      id: 8,
+      character: "事",
+      onyomi: "ji",
+      katakana: "ジ",
+      kunyomi: "koto",
+      hiragana: "こと",
+      meaning: "matter, thing, fact, business, reason, possibly",
+      jlpt: "N4",
+    },
+    {
+      id: 9,
+      character: "自",
+      onyomi: "ji, shi",
+      katakana: "ジ、 シ",
+      kunyomi: "mizuka(ra)",
+      hiragana: "みずか(ら)",
+      meaning: "oneself",
+      jlpt: "N4",
+    },
+    {
+      id: 10,
+      character: "社",
+      onyomi: "sha",
+      katakana: "シャ",
+      kunyomi: "yashiro",
+      hiragana: "やしろ",
+      meaning: "company, firm, office, association, shrine",
+      jlpt: "N4",
     }
   ]
 
-  const [currentIndex, setCurrentIndex] = useState(currentIndex);
-  const [currentKanji, setCurrentKanji] = useState(currentKanji);
-  const [currentOnyomi, setCurrentOnyomi] = useState(currentOnyomi);
-  const [currentKunyomi, setCurrentKunyomi] = useState(currentKunyomi);
-  const [currentMeaning, setCurrentMeaning] = useState(currentMeaning);
-  const [currentHiragana, setCurrentHiragana] = useState(currentHiragana);
-  const [currentKatakana, setCurrentKatakana] = useState(currentKatakana);
-  const [currentJlpt, setCurrentJlpt] = useState(currentJlpt);
+  const [currentIndex, setCurrentIndex] = useState("");
+  const [currentKanji, setCurrentKanji] = useState("");
+  const [currentOnyomi, setCurrentOnyomi] = useState("");
+  const [currentKunyomi, setCurrentKunyomi] = useState("");
+  const [currentMeaning, setCurrentMeaning] = useState("");
+  const [currentHiragana, setCurrentHiragana] = useState("");
+  const [currentKatakana, setCurrentKatakana] = useState("");
+  const [currentJlpt, setCurrentJlpt] = useState();
   const [isFlipped, setIsFlipped] = useState(false);
 
   const flipCard = () => {
