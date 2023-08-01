@@ -5,10 +5,10 @@ export default function Button(props) {
 
   return (
     <div className='buttons'>
-      <button onClick={getKanji}>
+      <button onClick={getKanji} className='buttons-nextkanji'>
         <h3>Next Kanji</h3>
       </button>
-      <button>
+      <button className='buttons-filterkanji'>
         <h3>Filter Kanji</h3>
       </button>
     </div>
