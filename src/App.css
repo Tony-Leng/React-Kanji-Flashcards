@@ -146,8 +146,8 @@ h4 {
   width: 150px;
   font-weight: 600;
   border-radius: 8px;
-  border: #56A9E6 2px solid;
-  color: black;
+  border: none;
+  color: #56A9E6;
   background-color: #F9F9F9;
   cursor: pointer;
   box-shadow: 16px black;
